@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <%- include('templates/head.ejs') %>
+</head>
+<body>
+    <%- include('templates/header.ejs', {active: 'contactus'}) %>
+<h2>Contact us</h2>
+    <div class="contactus-container ">
+        <form action="/contactus" method="post">
+      
+          <label for="firstname">First Name</label>
+          <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+      
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+      
+          <label for="email">Last Name</label>
+          <input type="email" id="email" name="email" placeholder="Emaile" required>
+
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+      
+          <input type="submit" value="Submit">
+      
+        </form>
+      </div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <%- include('templates/head.ejs') %>
+</head>
+
+<body>
+  <%- include('templates/header.ejs', {active: 'home' }) %>
+    <main>
+      <h1>Events</h1>
+
+      <% if(events.length) { %>
+        <div>
+          <h2>Available Events:</h2>
+          <% for(let event of events){ %>
+            <h3>
+              <%= event.title %>
+              <%= event.time %>
+            </h3>
+            <% } %>
+        </div>
+        <% } else { %>
+          <div>No Events Available</div>
+          <% } %>
+    </main>
+</body>
+
+</html>

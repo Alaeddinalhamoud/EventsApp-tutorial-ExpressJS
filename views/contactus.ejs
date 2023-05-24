@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <%- include('templates/head.ejs') %>
-</head>
-<body>
-    <%- include('templates/header.ejs', {active: 'contactus'}) %>
-<h2>Contact us</h2>
-    <div class="contactus-container ">
-        <form action="/contactus" method="post">
-      
-          <label for="firstname">First Name</label>
-          <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-      
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-      
-          <label for="email">Last Name</label>
-          <input type="email" id="email" name="email" placeholder="Emaile" required>
 
-          <label for="subject">Subject</label>
-          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
-      
-          <input type="submit" value="Submit">
-      
-        </form>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <%- include('templates/head.ejs') %>
+</head>
+
+<body>
+  <%- include('templates/header.ejs', {active: 'contactus' }) %>
+    <h2>Contact us</h2>
+
+    <div class="center">
+        <h1>      
+          <%= locals?.contactusformstatus || '' %>           
+        </h1>      
+    </div>
+    <div class="contactus-container ">
+      <form action="/contactus" method="post">
+        <label for="fullName">First Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+
+        <label for="Intention">Intention</label>
+        <select name="intention" id="intention" required>
+          <option value="Not sure">Not Sure</option>
+          <option value="Coming">Coming</option>
+          <option value="dont know">don't know</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea id="body" name="body" placeholder="Write something.." style="height:200px" required></textarea>
+
+        <input type="submit" value="Submit">
+
+      </form>
+    </div>
 
 </body>
+
 </html>

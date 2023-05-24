@@ -21,13 +21,13 @@ const result = await db.promise().query(`SELECT * FROM Events`);
 });
 
 
-router.post('/add', (req, res) => {
-  console.log(req.body.firstName);
+// router.post('/add', (req, res) => {
+//   console.log(req.body.firstName);
 
-  db.promise().query(`INSERT INTO Events VALUES('${req.body.id}', '${req.body.name}')`)
+//   db.promise().query(`INSERT INTO ContactUs VALUES('${req.body.FullName}', '${req.body.name}')`)
 
     
-});
+// });
 
 
 module.exports = router;

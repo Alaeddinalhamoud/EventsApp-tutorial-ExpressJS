@@ -76,7 +76,7 @@
 }
 
 
-.contactus-container, input[type=text], input[type=email], textarea {
+.contactus-container, input[type=text], input[type=email], textarea, select {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */ 
   border: 1px solid #ccc; /* Gray border */
@@ -120,4 +120,10 @@ th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+
+.center {
+  text-align: center;
+  border: 3px solid green;
 }

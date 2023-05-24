@@ -19,10 +19,6 @@ app.get("/", (req, res) => {
   res.render("index", viewData);
 })
 
-app.get("/faq", (req, res) => {
-    
-    res.render("faq");
-})
 
 
  
@@ -34,6 +30,9 @@ const contactusRouter = require("./routes/contactus")
 
 app.use("/contactus", contactusRouter)
 
+const faqRouter = require("./routes/faq")
+
+app.use("/faq", faqRouter)
 
 app.listen(5000);
 

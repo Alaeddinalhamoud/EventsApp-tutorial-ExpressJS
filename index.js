@@ -8,23 +8,14 @@ app.use(express.urlencoded({extended: true}))
 
 app.set("view engine", "ejs");
 
-const eventsData = require("./utils/events"); 
-
 app.get("/", (req, res) => {
- 
-  const viewData = {
-    events: eventsData.events
-  };
-
-  res.render("index", viewData);
+  res.render("index");
 })
 
-
-
  
- const eventRouter = require("./routes/events")
+ const eventRouter = require("./routes/event")
 
-app.use("/events", eventRouter)
+app.use("/event", eventRouter)
 
 const contactusRouter = require("./routes/contactus")
 
@@ -33,6 +24,14 @@ app.use("/contactus", contactusRouter)
 const faqRouter = require("./routes/faq")
 
 app.use("/faq", faqRouter)
+
+const stageRouter = require("./routes/stage")
+
+app.use("/stage", stageRouter)
+
+const performerRouter = require("./routes/performer")
+
+app.use("/performer", performerRouter)
 
 app.listen(5000);
 

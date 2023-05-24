@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Of Performers</title>
+  <%- include('templates/head.ejs') %>
+</head>
+
+<body>
+  <%- include('templates/header.ejs', {active: 'performers' }) %>
+  <main>
+    <h1>Performers</h1>
+    <% if(performers.length) { %>
+    <table>
+      <thead>
+        <th>#</th>
+        <th>Image</th>
+        <th>Name</th>
+      </thead>
+      <tbody>
+        <% for(let performer of performers){ %>
+        <tr>
+          <td>
+            <%= performer.Id %>
+          </td>
+          <td>
+            <img src="<%= performer.ImageUrl %>" alt="<%= performer.Name %>" width="150" height="150">
+          </td>
+          <td>
+            <%= performer.Name %>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <div>No Performers Available...</div>
+    <% } %>
+  </main>
+</body>
+
+</html>

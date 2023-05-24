@@ -11,23 +11,9 @@
 
 <body>
   <%- include('templates/header.ejs', {active: 'home' }) %>
-    <main>
-      <h1>Events</h1>
-
-      <% if(events.length) { %>
-        <div>
-          <h2>Available Events:</h2>
-          <% for(let event of events){ %>
-            <h3>
-              <%= event.title %>
-              <%= event.time %>
-            </h3>
-            <% } %>
-        </div>
-        <% } else { %>
-          <div>No Events Available</div>
-          <% } %>
-    </main>
+  <main>
+    
+  </main>
 </body>
 
 </html>

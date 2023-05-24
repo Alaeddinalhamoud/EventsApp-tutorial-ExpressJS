@@ -13,26 +13,25 @@
 
   <%- include('templates/header.ejs', { active: 'faq' }) %>
 
-    <h1>FAQs</h1>
+  <h1>FAQs</h1>
 
-    <% if(faqs.length) { %>
+  <% if(faqs.length) { %>
 
-      <% for(let faq of faqs){ %>
-        <button class="accordion">
-          <%= faq.Question %>
-        </button>
-        <div class="panel">
-          <p>
-            <%= faq.Answer %>
-          </p>
-        </div>
-        <% } %>
-        <% } else { %>
-          <div>No FAQs Available</div>
-          <% } %>
+  <% for(let faq of faqs){ %>
+  <button class="accordion">
+    <%= faq.Question %>
+  </button>
+  <div class="panel">
+    <p>
+      <%= faq.Answer %>
+    </p>
+  </div>
+  <% } %>
+  <% } else { %>
+  <div>No FAQs Available</div>
+  <% } %>
 
-
-            <script src="js/main.js"> </script>
+  <script src="js/main.js"> </script>
 </body>
 
 </html>

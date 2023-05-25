@@ -12,7 +12,26 @@
 <body>
   <%- include('templates/header.ejs', {active: 'home' }) %>
   <main>
-    
+    <h1>Events</h1>
+    <% if(events.length) { %>
+    <div class="flex-container">
+      <% for(let event of events){ %>
+
+
+      <div class="card">
+        <img src="<%= event.PerformerImageUrl %>" alt="<%= event.PerformerName %>" style="width:100%">
+        <h1><%= event.PerformerName %></h1>
+        <p class="title"> On Stage: <%= event.StageName %></p>
+        <p>Date: <%= event.Date %></p>
+        <p>Time: <%= event.Time %></p>
+        <p><a class="button" href="/event/<%= event.Id %>">More Details...</a></p>
+      </div>
+
+      <% } %>
+    </div>
+    <% } else { %>
+    <div>No Events Available...</div>
+    <% } %>
   </main>
 </body>
 

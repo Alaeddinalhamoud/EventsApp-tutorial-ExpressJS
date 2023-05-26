@@ -12,7 +12,6 @@
 <body>
   <%- include('templates/header.ejs', {active: 'home' }) %>
   <main>
-    <h1>Events</h1>
     <% if(events.length) { %>
     <div class="flex-container">
       <% for(let event of events){ %>

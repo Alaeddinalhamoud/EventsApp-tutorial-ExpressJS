@@ -11,35 +11,47 @@
 
 <body>
   <%- include('templates/header.ejs', {active: 'stages' }) %>
-  <main>
-    <h1>Stages</h1>
-    <% if(stages.length) { %>
-    <table>
-      <thead>
-        <th>#</th>
-        <th>Image</th>
-        <th>Name</th>
-      </thead>
-      <tbody>
-        <% for(let stage of stages){ %>
-        <tr>
-          <td>
-            <%= stage.Id %>
-          </td>
-          <td>
-            <img src="<%= stage.ImageUrl %>" alt="<%= stage.Name %>" width="150" height="150">
-          </td>
-          <td>
-            <%= stage.Name %>
-          </td>
-        </tr>
-        <% } %>
-      </tbody>
-    </table>
-    <% } else { %>
-    <div>No Stages Available...</div>
-    <% } %>
-  </main>
+    <main>
+     
+      <div class="center">
+        <h2> <%= stageName %> </h2>
+      </div>
+     
+      <% if(stages.length) { %>
+       
+        <table>
+          <thead>
+            <th>Image</th>
+            <th>Performer</th>
+            <th>Date</th>
+            <th>Time</th>
+          </thead>
+          <tbody>
+            <% for(let stage of stages){ %>
+              <tr>
+                <td>
+                  <img src="<%= stage.PerformerImageUrl %>" alt="<%= stage.Name %>" width="100" height="100">
+                </td>
+                <td>
+                  <%= stage.PerformerName %>
+                </td>
+                <td>
+                  <%= stage.Date %>
+                </td>
+                <td>
+                  <%= stage.Time %>
+                </td>
+              </tr>
+              <% } %>
+          </tbody>
+        </table>
+        <% } else { %>
+          <div>No Performers Available...</div>
+          <% } %>
+          <div class="m-top-2">
+            <a class="button" href="/stage"><<< Back to Stages</a>
+          </div>
+    </main>
 </body>
 
 </html>

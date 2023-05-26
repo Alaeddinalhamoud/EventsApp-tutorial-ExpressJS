@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Of Stages</title>
+  <%- include('templates/head.ejs') %>
+</head>
+
+<body>
+  <%- include('templates/header.ejs', {active: 'stages' }) %>
+  <main>
+    <h1>Stages</h1>
+    <% if(stages.length) { %>
+    <table>
+      <thead>
+        <th>#</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <% for(let stage of stages){ %>
+        <tr>
+          <td>
+            <%= stage.Id %>
+          </td>
+          <td>
+            <img src="<%= stage.ImageUrl %>" alt="<%= stage.Name %>" width="150" height="150">
+          </td>
+          <td>
+            <%= stage.Name %>
+          </td>
+          <td>
+            <a class="button" href="/stage/<%= stage.Id %>">More...</a>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <div>No Stages Available...</div>
+    <% } %>
+   
+  </main>
+</body>
+
+</html>

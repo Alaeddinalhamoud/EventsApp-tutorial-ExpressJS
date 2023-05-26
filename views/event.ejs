@@ -11,9 +11,22 @@
 
 <body>
   <%- include('templates/header.ejs', {active: 'events' }) %>
-  <main>
-   
-  </main>
+    <main>
+      <h1>Event</h1>
+      <hr />
+      <div>
+        <img src="<%= event.PerformerImageUrl %>" alt="<%= event.PerformerName %>" style="width:250px">
+        <img src="<%= event.StageImageUrl %>" alt="<%= event.StageName %>" style="width:250px">
+        <h1> Actor:
+          <%= event.PerformerName %>
+        </h1>
+        <p>   Stage: <%= event.StageName %>
+         </p>
+        <p>Date: <%= event.Date %>
+        </p>
+        <p>Time: <%= event.Time %>
+        </p>
+    </main>
 </body>
 
 </html>

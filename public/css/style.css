@@ -149,8 +149,9 @@ tr:nth-child(even) {
   background-color: #000;
   text-align: center;
   cursor: pointer;
-  width: 90%;
   font-size: 18px;
+  border-radius: 12px;
+  text-decoration: none;
 }
 
 .button:hover, a:hover {
@@ -164,4 +165,12 @@ tr:nth-child(even) {
 
 .flex-container > div { 
   margin: 10px; 
+}
+
+img {
+  border-radius: 8px;
+}
+
+.m-top-2{
+margin-top: 1rem;
 }

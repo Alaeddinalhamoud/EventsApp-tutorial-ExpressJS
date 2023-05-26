@@ -15,6 +15,7 @@
       <h1>Event</h1>
       <hr />
       <div>
+        <% if(event != null) { %>
         <img src="<%= event.PerformerImageUrl %>" alt="<%= event.PerformerName %>" style="width:250px">
         <img src="<%= event.StageImageUrl %>" alt="<%= event.StageName %>" style="width:250px">
         <h1> Actor:
@@ -26,6 +27,9 @@
         </p>
         <p>Time: <%= event.Time %>
         </p>
+        <% } else { %>
+          <div>No Event Available...</div>
+          <% } %>
     </main>
 </body>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 22, 2023 at 10:43 PM
+-- Generation Time: May 26, 2023 at 09:07 PM
 -- Server version: 8.0.33
 -- PHP Version: 7.4.3-4ubuntu2.18
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `ContactUs` (
   `Id` int NOT NULL,
   `FullName` varchar(500) NOT NULL,
-  `Email` varchar(100) NOT NULL,
+  `Email` varchar(500) NOT NULL,
   `Intestion` varchar(100) NOT NULL,
   `Body` varchar(10000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -49,16 +49,6 @@ CREATE TABLE `Events` (
   `Time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `Events`
---
-
-INSERT INTO `Events` (`Id`, `StageId`, `PerformareId`, `Date`, `Time`) VALUES
-(1, 1, 1, '2023-05-23', '22:00:50'),
-(2, 2, 2, '2023-05-31', '21:00:55'),
-(3, 1, 2, '2023-05-27', '22:00:50'),
-(4, 2, 1, '2023-06-30', '21:00:55');
-
 -- --------------------------------------------------------
 
 --
@@ -70,14 +60,6 @@ CREATE TABLE `FAQs` (
   `Question` varchar(5000) NOT NULL,
   `Answer` varchar(10000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `FAQs`
---
-
-INSERT INTO `FAQs` (`Id`, `Question`, `Answer`) VALUES
-(1, 'Q1', 'A1'),
-(2, 'Q2', 'A2');
 
 -- --------------------------------------------------------
 
@@ -91,14 +73,6 @@ CREATE TABLE `Performers` (
   `ImageUrl` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `Performers`
---
-
-INSERT INTO `Performers` (`Id`, `Name`, `ImageUrl`) VALUES
-(1, 'Actor-1', 'https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_960_720.jpg'),
-(2, 'Actor-2', 'https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_960_720.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -110,14 +84,6 @@ CREATE TABLE `Stages` (
   `Name` varchar(500) NOT NULL,
   `ImageUrl` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `Stages`
---
-
-INSERT INTO `Stages` (`Id`, `Name`, `ImageUrl`) VALUES
-(1, 'Stage-1', 'https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_960_720.jpg'),
-(2, 'Stage-2', 'https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_960_720.jpg');
 
 --
 -- Indexes for dumped tables
@@ -152,6 +118,22 @@ ALTER TABLE `Performers`
 --
 ALTER TABLE `Stages`
   ADD PRIMARY KEY (`Id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `ContactUs`
+--
+ALTER TABLE `ContactUs`
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `Events`
+--
+ALTER TABLE `Events`
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

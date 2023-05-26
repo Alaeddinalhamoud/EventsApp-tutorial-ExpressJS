@@ -6,11 +6,17 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
 
-  const result = await db.promise().query(`SELECT * FROM Performers`);
+  try {
+    const result = await db.promise().query(`SELECT * FROM Performers`);
 
-   console.log(result[0]);
- 
-  res.render("performer", {performers: result[0]});
+    console.log(result[0]);
+
+    res.render("performer", { performers: result[0] });
+  } catch {
+    res.render("performer", { performers: [{}] });
+
+  }
+
 });
 
 module.exports = router;

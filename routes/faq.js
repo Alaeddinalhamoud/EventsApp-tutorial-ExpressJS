@@ -18,9 +18,9 @@ console.log(result[0]);
     });
     
   } catch {
-    res
-      .status(500)
-      .render("faq");
+    res.status(200).render("faq", {
+      faqs: [{}],
+    });
   }
 });
 

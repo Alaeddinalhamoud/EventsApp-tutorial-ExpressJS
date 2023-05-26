@@ -4,10 +4,13 @@
     width: 100%;
     background-color: #555;
     overflow: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
   
   .navbar a {
-    float: left;
+    
     text-align: center;
     padding: 12px;
     color: white;
@@ -58,7 +61,7 @@
   .panel {
     padding: 0 18px;
     display: none;
-    background-color: white;
+    background-color: #000;
     overflow: hidden;
   }
   /* FAQ End */
@@ -173,4 +176,17 @@ img {
 
 .m-top-2{
 margin-top: 1rem;
+}
+
+
+body{
+  background-image: url('https://images.pexels.com/photos/894156/pexels-photo-894156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  color: white;
+}
+
+.logo{
+  color: #ccc;
+  font-size: large;
+  text-decoration: none;
+  padding:0%;
 }

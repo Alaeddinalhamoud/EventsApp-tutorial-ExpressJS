@@ -138,11 +138,6 @@ tr:nth-child(even) {
   text-align: center;
 }
 
-.title {
-  color: grey;
-  font-size: 18px;
-}
-
 .button {
   border: none;
   outline: 0;

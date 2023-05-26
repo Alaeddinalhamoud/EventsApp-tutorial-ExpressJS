@@ -20,10 +20,10 @@
       <div class="card">
         <img src="<%= event.PerformerImageUrl %>" alt="<%= event.PerformerName %>" style="width:100%">
         <h1><%= event.PerformerName %></h1>
-        <p class="title"> On Stage: <%= event.StageName %></p>
+        <p> On Stage: <%= event.StageName %></p>
         <p>Date: <%= event.Date %></p>
         <p>Time: <%= event.Time %></p>
-        <p><a class="button" href="/event/<%= event.Id %>">More Details...</a></p>
+        <p><a class="button" href="/event/<%= event.Id %>">More...</a></p>
       </div>
 
       <% } %>

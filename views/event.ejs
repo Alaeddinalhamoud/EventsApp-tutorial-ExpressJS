@@ -14,22 +14,37 @@
     <main>
       <h1>Event</h1>
       <hr />
-      <div>
-        <% if(event != null) { %>
-        <img src="<%= event.PerformerImageUrl %>" alt="<%= event.PerformerName %>" style="width:250px">
-        <img src="<%= event.StageImageUrl %>" alt="<%= event.StageName %>" style="width:250px">
-        <h1> Actor:
-          <%= event.PerformerName %>
-        </h1>
-        <p>   Stage: <%= event.StageName %>
-         </p>
-        <p>Date: <%= event.Date %>
-        </p>
-        <p>Time: <%= event.Time %>
-        </p>
-        <% } else { %>
-          <div>No Event Available...</div>
-          <% } %>
+      <div class="center">
+        <% if(event !=null) { %>
+          <!--You have to make it flex-->
+          <div class="justify-content-space-around">
+            <div>
+              <!--Actor-->
+              <img src="<%= event.PerformerImageUrl %>" alt="<%= event.PerformerName %>" style="width:250px">
+
+              <h2> Actors:
+                <%= event.PerformerName %>
+                  </h1>
+            </div>
+            <div>
+              <!--Stage-->
+              <img src="<%= event.StageImageUrl %>" alt="<%= event.StageName %>" style="width:250px">
+              <h2> Stage: <%= event.StageName %>
+              </h2>
+            </div>
+          </div>
+
+
+
+
+          <h3>Date: <%= event.Date %></h3>
+          <h3>Time: <%= event.Time %></h3>
+
+          <!--Flex-->
+          <% } else { %>
+            <div>No Event Available...</div>
+            <% } %>
+      </div>
     </main>
 </body>
 

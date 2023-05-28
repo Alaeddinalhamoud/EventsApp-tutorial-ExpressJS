@@ -33,5 +33,9 @@ const performerRouter = require("./routes/performer")
 
 app.use("/performer", performerRouter)
 
+const searchRouter = require("./routes/search")
+
+app.use("/search", searchRouter)
+
 app.listen(5000);
 

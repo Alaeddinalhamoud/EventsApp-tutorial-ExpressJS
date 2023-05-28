@@ -1,5 +1,3 @@
-/* Navbar Start */
-
 .navbar {
     width: 100%;
     background-color: #555;
@@ -17,15 +15,14 @@
     text-decoration: none;
     font-size: 17px;
   }
+  .active {
+    background-color: #000;
+  }
   
   .navbar a:hover {
     background-color: #827b7b;
   }
   
-  .active {
-    background-color: #000;
-  }
-
   .navbar a.split {
     float: right;
     background-color: #04AA6D;
@@ -37,8 +34,19 @@
       display: block;
     }
   }
+  .navbar-search-container {
+    text-align: center;
+    margin-top : 20px;
+  }
+  #search-input {
+    padding: 5px;
+    width: auto;
+  }
 
-  /* Navbar End */
+  #search-results {
+    margin-top: 20px;
+    text-align: center;
+  }
 
   /* FAQ start */
   .accordion {
@@ -193,3 +201,30 @@ body{
   flex-direction: row;
   justify-content: space-around;
 }
+
+.search-container {
+  float: right;
+}
+
+.search-container  input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 80% !important;
+}
+
+ .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+

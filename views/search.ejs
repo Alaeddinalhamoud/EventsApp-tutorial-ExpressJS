@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search</title>
+  <%- include('templates/head.ejs') %>
+</head>
+
+<body>
+  <%- include('templates/header.ejs', {active: 'search' }) %>
+  <main>
+    <h1>Search Result</h1>
+  <!--TO-DO-->
+  <% if(searchResults.length) { %>
+    <div class="flex-container">
+      <% for(let result of searchResults){ %>
+      <div class="card">
+        <img src="<%= result.PerformerImageUrl %>" alt="<%= result.PerformerName %>" style="width:100%">
+        <h1><%= result.PerformerName %></h1>
+        <p> On Stage: <%= result.StageName %></p>
+        <p>Date: <%= result.Date %></p>
+        <p>Time: <%= result.Time %></p>
+        <p><a class="button" href="/event/<%= result.Id %>">More...</a></p>
+      </div>
+
+      <% } %>
+    </div>
+    <% } else { %>
+    <div>No Search Result...</div>
+    <% } %>
+
+  </main>
+  <%- include('templates/footer.ejs') %>
+
+</body>
+
+</html>
